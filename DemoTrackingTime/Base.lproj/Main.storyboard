@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Xv-Zf-TaM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,25 +25,65 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Klz-b4-9of">
                                 <rect key="frame" x="37" y="183" width="300" height="300"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="5AF-t9-cza"/>
                                     <constraint firstAttribute="width" secondItem="Klz-b4-9of" secondAttribute="height" multiplier="1:1" id="dWj-d6-5HS"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mVc-hR-GA2" appends="YES" id="gIq-D7-PBI"/>
+                                </connections>
                             </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2Nb-JW-HGs">
+                                <rect key="frame" x="26" y="161" width="323" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Klz-b4-9of" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Hwc-O3-1mh"/>
+                            <constraint firstItem="Klz-b4-9of" firstAttribute="top" secondItem="2Nb-JW-HGs" secondAttribute="bottom" constant="20" id="Lgo-fS-rpR"/>
                             <constraint firstItem="Klz-b4-9of" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bHD-a3-byl"/>
+                            <constraint firstItem="2Nb-JW-HGs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="uSU-bQ-hcF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Nb-JW-HGs" secondAttribute="trailing" constant="10" id="y1Z-LE-CX9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Klz-b4-9of" id="fnV-4G-0HI"/>
+                        <outlet property="progressView" destination="2Nb-JW-HGs" id="eCW-qX-u8Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mVc-hR-GA2"/>
             </objects>
-            <point key="canvasLocation" x="223" y="21"/>
+            <point key="canvasLocation" x="103" y="23"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="XpY-8a-AWR">
+            <objects>
+                <viewController id="9Xv-Zf-TaM" customClass="ViewController2" customModule="DemoTrackingTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KLl-nr-c5a"/>
+                        <viewControllerLayoutGuide type="bottom" id="LFL-h0-aZB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5qX-QH-keZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZf-WW-lCY">
+                                <rect key="frame" x="144" y="331" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="playWithSender:" destination="9Xv-Zf-TaM" eventType="touchUpInside" id="JWO-6f-sfb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DRU-wY-zvM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="790" y="-169"/>
         </scene>
     </scenes>
 </document>
